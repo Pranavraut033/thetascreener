@@ -3,19 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --wui-color-accent-100: theme("backgroundColor.indigo.600") !important;
+  --wui-spacing-l: theme("padding.6") !important;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--wui-color-accent-100);
+}
+wui-connect-button {
+  @apply py-3 px-6 bg-indigo-600 text-white font-semibold rounded-full transition-transform transform hover:scale-105 focus:scale-95 active:scale-95 duration-150;
 }
