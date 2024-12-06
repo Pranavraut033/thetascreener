@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { useAppKitAccount } from "@reown/appkit/react";
 import type { ReactNode } from "react";
 import Login from "./Login";

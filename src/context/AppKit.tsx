@@ -5,12 +5,21 @@ import { createAppKit } from '@reown/appkit/react'
 import { EthersAdapter } from '@reown/appkit-adapter-ethers'
 import { type AppKitNetwork, arbitrum, mainnet, solana } from '@reown/appkit/networks'
 import type { ReactNode } from 'react';
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets'
+import { SolanaAdapter } from '@reown/appkit-adapter-solana'
+
+
+
+const solanaWeb3JsAdapter = new SolanaAdapter({
+  wallets: [new PhantomWalletAdapter(),]
+})
 
 // 1. Get projectId
 const projectId = 'ce5db695dce6d51c2f2edd093809db2b';
 
 // 2. Set the networks
 const networks: [AppKitNetwork, ...AppKitNetwork[]] = [arbitrum, mainnet, solana,];
+const ethersAdapter = new EthersAdapter()
 
 // 3. Create a metadata object - optional
 const metadata = {
@@ -22,7 +31,7 @@ const metadata = {
 
 // 4. Create a AppKit instance
 createAppKit({
-  adapters: [new EthersAdapter()],
+  adapters: [ethersAdapter, solanaWeb3JsAdapter],
   networks,
   metadata,
   projectId,

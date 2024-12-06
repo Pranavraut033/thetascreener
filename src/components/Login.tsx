@@ -1,6 +1,5 @@
 // Login.tsx
 
-
 const Login: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-100 to-purple-200">
@@ -11,11 +10,10 @@ const Login: React.FC = () => {
         <p className="text-center text-gray-600 mb-8">
           Please connect your wallet to continue
         </p>
-
         <div className="flex justify-center">
+          {/* @ts-expect-error button declaration */}
           <appkit-connect-button />
         </div>
-
         <div className="mt-6 text-center">
           <a href="/help" className="text-sm text-indigo-500 hover:text-indigo-700 transition-colors">
             Need help connecting your wallet?

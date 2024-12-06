@@ -10,7 +10,9 @@ export default function Home() {
               My Dashboard
             </div>
             <div className="flex items-center space-x-3">
+              {/* @ts-expect-error button declaration */}
               <appkit-network-button />
+              {/* @ts-expect-error button declaration */}
               <appkit-account-button />
             </div>
           </div>
